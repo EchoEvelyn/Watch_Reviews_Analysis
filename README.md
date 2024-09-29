@@ -6,9 +6,16 @@ This project focuses on analyzing customer reviews of watches using various Natu
 ## Table of Contents
 1. [Data](#data)
 2. [Tools and Technologies](#tools-and-technologies)
+3. [Findings and Conclusions](#findings-and-conclusions)
 
 
 ## Data
+The Amazon Customer Reviews dataset records watch reviews from 04/05/2001 to 08/31/2015. 
+
+**Key Features**: 
+- **star_rating**: A numerical rating (from 1 to 5) provided by the customer to reflect their satisfaction with the product.
+- **review_body**: The main text of the customer review, containing detailed feedback about the product.
+- **review_date**: The date when the customer submitted the review.
 
 
 
