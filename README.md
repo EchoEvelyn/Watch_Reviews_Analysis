@@ -39,19 +39,13 @@ The Amazon Customer Reviews dataset records watch reviews from 04/05/2001 to 08/
 ### Environment Setup
 
 Ensure the following Python libraries are installed:
-
+  
 ```bash
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import nltk
-
-# authentication though Google Drive
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
-from google.colab import auth
-from oauth2client.client import GoogleCredentials
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
@@ -64,11 +58,29 @@ from gensim.models import CoherenceModel
 # For NLTK downloads
 nltk.download('punkt')
 nltk.download('stopwords')
+```
 
 ### Authenticate with Google Drive:
 Since I stored the dataset in Google Drive, I need to authenticate and access it using PyDrive and Google Colab:
+```bash
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+from google.colab import auth
+from oauth2client.client import GoogleCredentials
+```
+### Laod the Data From Google Drive
+The dataset (e.g., watch_reviews.csv) is stored in Google Drive, and we use the file ID to retrieve it:
+```bash
+# Google Drive file ID
+id = 'your_google_drive_file_id_here'
 
+# Download the dataset
+file = drive.CreateFile({'id': id})
+file.GetContentFile('watch_reviews.tsv')
 
+# Load the dataset into a Pandas DataFrame
+df = pd.read_csv('watch_reviews.tsv', sep='\t', on_bad_lines='skip')
+```
 
 ## Findings and Conclusions
 Through the application of K-means clustering and Latent Dirichlet Allocation (LDA), we derived several valuable insights from customer reviews. These insights can be leveraged for product improvement, customer satisfaction, and more effective marketing strategies:
