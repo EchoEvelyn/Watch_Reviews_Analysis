@@ -18,6 +18,8 @@ The Amazon Customer Reviews dataset records watch reviews from 04/05/2001 to 08/
 - **review_body**: The main text of the customer review, containing detailed feedback about the product.
 - **review_date**: The date when the customer submitted the review.
 
+You can download the data here: [Download the Data](https://drive.google.com/file/d/1O6lhXvz0AthavxElCZDlFIocZXc0oMT6/view?usp=sharing)
+
 
 
 ## Tools and Technologies
