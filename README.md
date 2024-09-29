@@ -6,7 +6,8 @@ This project focuses on analyzing customer reviews of watches using various Natu
 ## Table of Contents
 1. [Data](#data)
 2. [Tools and Technologies](#tools-and-technologies)
-3. [Findings and Conclusions](#findings-and-conclusions)
+3. [Installations](#installations)
+4. [Findings and Conclusions](#findings-and-conclusions)
 
 
 ## Data
@@ -33,6 +34,35 @@ The Amazon Customer Reviews dataset records watch reviews from 04/05/2001 to 08/
 - **Latent Dirichlet Allocation (LDA)**: For topic modeling.
 - **Gensim**: Library for topic modeling and document similarity analysis, used to implement LDA and compute topic coherence scores.
 
+
+## Installations
+### Environment Setup
+
+Ensure the following Python libraries are installed:
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import nltk
+
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+from google.colab import auth
+from oauth2client.client import GoogleCredentials
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import KMeans
+from sklearn.decomposition import LatentDirichletAllocation, PCA
+
+import gensim
+from gensim.corpora import Dictionary
+from gensim.models import CoherenceModel
+
+# For NLTK downloads
+nltk.download('punkt')
+nltk.download('stopwords')
 
 ## Findings and Conclusions
 Through the application of K-means clustering and Latent Dirichlet Allocation (LDA), we derived several valuable insights from customer reviews. These insights can be leveraged for product improvement, customer satisfaction, and more effective marketing strategies:
